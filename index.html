@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#251c20">
+  <meta name="description" content="Browse perfumes at Christine's Blessed Business. Call or message Christine to ask about products.">
+  <title>Christine's Blessed Business | Perfumes</title>
+  <style>
+    :root {
+      --ink: #251c20;
+      --muted: #746970;
+      --rose: #a45b68;
+      --cream: #fbf8f4;
+      --line: #e9e1dc;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--cream); font: 16px/1.6 var(--sans); }
+    a { color: inherit; }
+    .announcement { padding: .6rem 1rem; background: var(--ink); color: white; text-align: center; font-size: .76rem; letter-spacing: .13em; }
+    header { width: min(1160px, calc(100% - 2.5rem)); min-height: 78px; margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .brand { font: bold 1.25rem var(--serif); text-decoration: none; }
+    nav { display: flex; gap: 1.5rem; }
+    nav a { text-decoration: none; font-size: .9rem; }
+    nav a:hover, .product-link:hover { color: var(--rose); }
+    .hero { min-height: 520px; padding: 4rem max(1.25rem, calc((100% - 1160px) / 2)); display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 3rem; background: linear-gradient(90deg, #f0e1d8 0%, rgba(252,248,244,.94) 48%, rgba(233,214,205,.48) 100%), url("WhatsApp%20Image%202026-10-05%20at%205.10.41%20PM%20(1).jpeg") center / cover; }
+    .eyebrow { margin: 0 0 .8rem; color: var(--rose); font-size: .74rem; font-weight: bold; letter-spacing: .2em; text-transform: uppercase; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 590px; margin-bottom: 1.15rem; font: normal clamp(3rem, 6vw, 5.2rem)/1.02 var(--serif); letter-spacing: -.045em; }
+    .hero-copy { max-width: 480px; margin-bottom: 1.8rem; color: var(--muted); font-size: 1.05rem; }
+    .buttons { display: flex; flex-wrap: wrap; gap: .75rem; }
+    .button { min-height: 47px; padding: .68rem 1.15rem; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--ink); border-radius: 2px; background: var(--ink); color: white; text-decoration: none; font-size: .88rem; font-weight: bold; transition: background .15s, transform .15s; }
+    .button:hover { background: #49363e; transform: translateY(-2px); }
+    .button.light { background: transparent; color: var(--ink); }
+    .button.light:hover { background: #ffffff88; }
+    .hero-photo { width: min(100%, 500px); height: 380px; justify-self: center; object-fit: contain; mix-blend-mode: multiply; }
+    .section { width: min(1160px, calc(100% - 2.5rem)); margin: auto; padding: 5rem 0; }
+    .section-title { max-width: 660px; margin: 0 auto 2.4rem; text-align: center; }
+    h2 { margin-bottom: .7rem; font: normal clamp(2.2rem, 4vw, 3.1rem)/1.1 var(--serif); letter-spacing: -.03em; }
+    .section-title p:last-child { margin: 0; color: var(--muted); }
+    .products { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+    .product { min-width: 0; overflow: hidden; border: 1px solid var(--line); background: white; }
+    .product-image-wrap { height: 245px; padding: .65rem; display: grid; place-items: center; background: #fff; }
+    .product img { width: 100%; height: 100%; object-fit: contain; }
+    .product-info { padding: .9rem 1rem 1rem; border-top: 1px solid #f0e9e4; }
+    .product-info h3 { margin: 0 0 .2rem; font: normal 1.16rem var(--serif); }
+    .product-info p { margin: 0 0 .4rem; color: var(--muted); font-size: .84rem; }
+    .product-link { color: var(--rose); font-size: .85rem; font-weight: bold; text-underline-offset: 3px; }
+    .contact { padding: 4.5rem 1.25rem; background: #f0e5de; text-align: center; }
+    .contact-inner { max-width: 700px; margin: auto; }
+    .contact-inner > p:not(.eyebrow) { color: var(--muted); }
+    .phone { display: inline-block; margin: .25rem 0 1.15rem; font-weight: bold; text-underline-offset: 4px; }
+    footer { padding: 1.8rem 1rem; background: var(--ink); color: #fbf8f4; text-align: center; font-size: .85rem; }
+    footer p { margin: .2rem; }
+    footer a { color: inherit; }
+    @media (max-width: 900px) {
+      .products { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .product-image-wrap { height: 230px; }
+    }
+    @media (max-width: 680px) {
+      header { min-height: 72px; }
+      nav { gap: .85rem; }
+      nav a { font-size: .82rem; }
+      .hero { grid-template-columns: 1fr; gap: 1rem; padding-top: 3.5rem; }
+      .hero-photo { height: 300px; }
+      .section { padding: 4rem 0; }
+      .products { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: .7rem; }
+      .product-image-wrap { height: 210px; }
+    }
+    @media (max-width: 470px) {
+      header { width: calc(100% - 2rem); padding: .75rem 0; align-items: flex-start; flex-direction: column; gap: .5rem; }
+      nav { width: 100%; justify-content: space-between; }
+      .hero { padding: 2.8rem 1rem 2rem; }
+      h1 { font-size: clamp(2.7rem, 14vw, 3.7rem); }
+      .hero-photo { height: 240px; }
+      .section { width: calc(100% - 1.5rem); }
+      .product-image-wrap { height: 175px; padding: .4rem; }
+      .product-info { padding: .7rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="announcement">PERFUMES · CALL OR MESSAGE TO ORDER</div>
+  <header>
+    <a class="brand" href="#home">Christine's Blessed Business</a>
+    <nav aria-label="Main navigation">
+      <a href="#collection">Perfumes</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section class="hero" id="home">
+      <div>
+        <p class="eyebrow">Welcome to Christine's</p>
+        <h1>Find a fragrance you'll love.</h1>
+        <p class="hero-copy">Browse the perfume photos, then message Christine to ask about availability or place an order.</p>
+        <div class="buttons">
+          <a class="button" href="#collection">Browse perfumes</a>
+          <a class="button light" href="https://wa.me/256787749370?text=Hello%20Christine%2C%20I%27d%20like%20to%20ask%20about%20your%20products.">WhatsApp Christine</a>
+        </div>
+      </div>
+      <img class="hero-photo" src="WhatsApp%20Image%202026-10-05%20at%205.10.41%20PM.jpeg" alt="Gucci Bloom perfume from the collection">
+    </section>
+    <section class="section" id="collection">
+      <div class="section-title">
+        <p class="eyebrow">Browse the collection</p>
+        <h2>Perfumes</h2>
+        <p>Ask Christine about the fragrance you like, current availability, and prices.</p>
+      </div>
+      <div class="products" id="products" aria-live="polite"></div>
+    </section>
+    <section class="contact" id="contact">
+      <div class="contact-inner">
+        <p class="eyebrow">Perfumes</p>
+        <h2>Need help choosing?</h2>
+        <p>Contact Christine to ask about the pictured perfumes, availability, and ordering.</p>
+        <a class="phone" href="tel:+256787749370">Call: +256 787 749370</a>
+        <div class="buttons" style="justify-content:center">
+          <a class="button" href="https://wa.me/256787749370?text=Hello%20Christine%2C%20I%27d%20like%20to%20place%20an%20order.">Order on WhatsApp</a>
+          <a class="button light" href="tel:+256787749370">Call Christine</a>
+        </div>
+        <p style="margin-top:1.2rem"><a href="mailto:musimentachristinemc@gmail.com">musimentachristinemc@gmail.com</a></p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p><strong>Christine's Blessed Business</strong> · Perfumes</p>
+    <p><a href="tel:+256787749370">+256 787 749370</a> · <a href="mailto:musimentachristinemc@gmail.com">musimentachristinemc@gmail.com</a></p>
+    <p>&copy; <span id="year"></span> Christine's Blessed Business</p>
+  </footer>
+  <script>
+    const photos = [
+      "WhatsApp Image 2026-10-05 at 5.10.40 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.40 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.41 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.41 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.41 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.41 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.42 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.42 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.42 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.42 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.44 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.44 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.44 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.44 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.48 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.48 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.48 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.48 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.49 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.49 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.49 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.49 PM (4).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.49 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.50 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.50 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.50 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.50 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.51 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.51 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.52 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.52 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.52 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.52 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.53 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.53 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.53 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.53 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.54 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.54 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.54 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.55 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.56 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.56 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.57 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.10.58 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.00 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.00 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.01 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.01 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.01 PM (3).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.01 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.02 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.02 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.02 PM.jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.03 PM (1).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.03 PM (2).jpeg",
+      "WhatsApp Image 2026-10-05 at 5.11.03 PM.jpeg"
+    ];
+
+    const products = document.getElementById("products");
+    photos.forEach((photo, index) => {
+      const card = document.createElement("article");
+      card.className = "product";
+
+      const imageWrap = document.createElement("div");
+      imageWrap.className = "product-image-wrap";
+      const image = document.createElement("img");
+      image.src = encodeURIComponent(photo);
+      image.alt = `Perfume product photo ${index + 1}`;
+      image.loading = "lazy";
+      imageWrap.append(image);
+
+      const info = document.createElement("div");
+      info.className = "product-info";
+      const title = document.createElement("h3");
+      title.textContent = `Fragrance ${String(index + 1).padStart(2, "0")}`;
+      const description = document.createElement("p");
+      description.textContent = "Ask Christine about availability and price.";
+      const order = document.createElement("a");
+      order.className = "product-link";
+      order.href = `https://wa.me/256787749370?text=${encodeURIComponent(`Hello Christine, I am asking about fragrance ${index + 1}. Is it available?`)}`;
+      order.textContent = "Ask on WhatsApp →";
+      info.append(title, description, order);
+      card.append(imageWrap, info);
+      products.append(card);
+    });
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
